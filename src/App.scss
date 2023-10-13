@@ -1,0 +1,122 @@
+@use 'scss/reset';
+@use 'scss/root';
+
+/* Utilities */
+.flex {
+  display: flex;
+  flex-wrap: wrap;  
+}
+
+html, body, section {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	width: 100dvw;
+	height: 100dvh;
+	font-family: var(--ff-body);
+	font-size: var(--fs-body);
+	color: var(--neutral-1);
+	background: var(--neutral-4);
+	overflow: hidden;
+
+	@extend .flex;
+	justify-content: center;
+	align-content: center;
+
+		
+	@media screen and (max-width: 700px) {
+		height: 100%;
+		overflow-y: scroll;
+		height: auto;
+	}	
+	
+}
+
+.markdown-container {
+	margin: 0;
+	padding: 0;
+	@media screen and (max-width: 700px) {
+		width: 100%;
+	}
+}
+
+.title {
+ 	text-align: center;
+	font-size: var(--fs-header);
+	font-weight: var(--fw-semi-bold);
+}
+
+.container {
+	width: 300px;
+	background: var(--neutral-1);
+	border: 3px solid var(--neutral-5);
+	border-radius: 10px;
+	padding: 1rem;
+
+	@media screen and (max-width: 350px) {
+		width: 100%;
+	}
+}
+
+#drum-machine {
+	display: grid;
+	justify-items: center;
+	grid-template-columns: repeat(3, 1fr);
+	grid-template-rows: repeat(3, 1fr);
+	gap: 1rem;
+}
+
+.drum-pad {
+	cursor: pointer;
+	outline: none;
+	border: 1px solid var(--neutral-5);
+	border-radius: 5px;
+	background: linear-gradient( 
+		45deg,
+		var(--neutral-2),
+		var(--neutral-4)
+	);
+	color: var(--neutral-1);
+	width: 100%;
+	height: 50px;
+	font-weight: var(--fw-semi-bold);
+}
+
+.drum-pad:hover, .drum-pad:active {
+	background: var(--neutral-5);
+	border-color: var(--neutral-4);
+	transition: 0.20s ease-in-out;
+}
+
+.displayContainer {
+	padding-top: 1rem;
+	text-align: center;
+}
+
+.subHeading {
+	color: var(--neutral-4);
+}
+
+#display {
+	margin-top: -0.5rem;
+	margin-inline: auto;
+	width: 150px;
+	height: 40px;
+	background: linear-gradient( 
+		45deg,
+		var(--neutral-2),
+		var(--neutral-4)
+	);
+	border: 1px solid var(--neutral-5);
+	border-radius: 10px;
+
+	@extend .flex;
+	align-content: center;
+	justify-content: center;
+}
+
+.displayText {
+	font-weight: var(--fw-medium);
+}
